@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "link_in_bios",
+  "info": {
+    "singularName": "link-in-bio",
+    "pluralName": "link-in-bios",
+    "displayName": "LinkInBio"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.link"
+    }
+  }
+}

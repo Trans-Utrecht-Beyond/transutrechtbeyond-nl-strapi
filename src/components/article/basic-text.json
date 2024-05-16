@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_article_basic_texts",
+  "info": {
+    "displayName": "BasicText",
+    "icon": "bold"
+  },
+  "options": {},
+  "attributes": {
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}

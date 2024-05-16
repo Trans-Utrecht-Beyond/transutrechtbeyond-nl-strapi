@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_general_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string"
+    },
+    "Target": {
+      "type": "string"
+    }
+  }
+}

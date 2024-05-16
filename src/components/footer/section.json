@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_footer_sections",
+  "info": {
+    "displayName": "Section",
+    "icon": "information",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Description": {
+      "type": "text"
+    },
+    "Links": {
+      "displayName": "Link",
+      "type": "component",
+      "repeatable": true,
+      "component": "general.link"
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}
