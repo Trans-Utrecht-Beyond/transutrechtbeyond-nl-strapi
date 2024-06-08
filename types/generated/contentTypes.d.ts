@@ -921,6 +921,12 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'oneToOne',
       'api::event-location.event-location'
     >;
+    ExtraDescription: Attribute.Blocks &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
