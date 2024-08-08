@@ -1,13 +1,14 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface ArticleBasicText extends Schema.Component {
-  collectionName: 'components_article_basic_texts';
+export interface GeneralLink extends Schema.Component {
+  collectionName: 'components_general_links';
   info: {
-    displayName: 'BasicText';
-    icon: 'bold';
+    displayName: 'Link';
+    icon: 'earth';
   };
   attributes: {
-    Content: Attribute.Blocks;
+    Text: Attribute.String;
+    Target: Attribute.String;
   };
 }
 
@@ -25,24 +26,23 @@ export interface FooterSection extends Schema.Component {
   };
 }
 
-export interface GeneralLink extends Schema.Component {
-  collectionName: 'components_general_links';
+export interface ArticleBasicText extends Schema.Component {
+  collectionName: 'components_article_basic_texts';
   info: {
-    displayName: 'Link';
-    icon: 'earth';
+    displayName: 'BasicText';
+    icon: 'bold';
   };
   attributes: {
-    Text: Attribute.String;
-    Target: Attribute.String;
+    Content: Attribute.Blocks;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'article.basic-text': ArticleBasicText;
-      'footer.section': FooterSection;
       'general.link': GeneralLink;
+      'footer.section': FooterSection;
+      'article.basic-text': ArticleBasicText;
     }
   }
 }

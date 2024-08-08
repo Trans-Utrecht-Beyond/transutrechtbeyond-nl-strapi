@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "permalinks",
+  "info": {
+    "singularName": "permalink",
+    "pluralName": "permalinks",
+    "displayName": "Permalink"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Path": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "regex": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "Target": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

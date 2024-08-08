@@ -1033,7 +1033,7 @@ export interface ApiEventTypeEventType extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    Images: Attribute.Media &
+    Images: Attribute.Media<'images', true> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -1196,6 +1196,36 @@ export interface ApiLinkInBioLinkInBio extends Schema.SingleType {
   };
 }
 
+export interface ApiPermalinkPermalink extends Schema.CollectionType {
+  collectionName: 'permalinks';
+  info: {
+    singularName: 'permalink';
+    pluralName: 'permalinks';
+    displayName: 'Permalink';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    Path: Attribute.String & Attribute.Required & Attribute.Unique;
+    Target: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::permalink.permalink',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::permalink.permalink',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPersonPerson extends Schema.CollectionType {
   collectionName: 'people';
   info: {
@@ -1231,7 +1261,7 @@ export interface ApiPersonPerson extends Schema.CollectionType {
           localized: false;
         };
       }>;
-    Picture: Attribute.Media &
+    Picture: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -1298,6 +1328,7 @@ declare module '@strapi/types' {
       'api::global-information.global-information': ApiGlobalInformationGlobalInformation;
       'api::home.home': ApiHomeHome;
       'api::link-in-bio.link-in-bio': ApiLinkInBioLinkInBio;
+      'api::permalink.permalink': ApiPermalinkPermalink;
       'api::person.person': ApiPersonPerson;
     }
   }
